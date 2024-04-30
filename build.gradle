@@ -1,0 +1,36 @@
+plugins {
+    id 'org.jetbrains.kotlin.jvm' version '1.6.10'
+    id 'org.openjfx.javafxplugin' version '0.0.8'
+//    id 'application'
+}
+
+group 'org.example'
+version '1.0-SNAPSHOT'
+
+compileKotlin {
+    kotlinOptions.jvmTarget = "11"
+}
+
+compileTestKotlin {
+    kotlinOptions.jvmTarget = "11"
+}
+javafx {
+    version = "11.0.2"
+    modules = ['javafx.controls', 'javafx.graphics', 'javafx.media']
+}
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    // Align versions of all Kotlin components
+//    implementation platform('org.jetbrains.kotlin:kotlin-bom')
+
+    implementation 'org.jetbrains.kotlin:kotlin-stdlib-jdk8'
+
+    // Use the tornadofx
+    implementation "no.tornado:tornadofx:1.7.20"
+    implementation 'org.openjfx:javafx:11.0.2'
+    implementation 'org.openjfx:javafx-base:11.0.2'
+    implementation 'org.openjfx:javafx-controls:11.0.2'
+}
